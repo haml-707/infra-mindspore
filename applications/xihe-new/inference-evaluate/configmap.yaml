@@ -22,7 +22,7 @@ data:
 
     evaluate:
       crd:
-        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221107154539
+        crd_image: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/xihe-inference-evaluate:evaluateimpl.v1.0.20221124180204
         crd_cpu: 0.5
         crd_memory: 512
         crd_template: /opt/app/template/crd-evaluate.yaml
