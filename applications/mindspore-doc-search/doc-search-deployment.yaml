@@ -18,7 +18,7 @@ spec:
       annotations:
         vault.hashicorp.com/agent-inject: 'true'
         vault.hashicorp.com/role: 'mindspore-search'
-        vault.hashicorp.com/agent-inject-perms-application.yml: "0700"
+        vault.hashicorp.com/agent-inject-perms-application.yml: "0600"
         vault.hashicorp.com/agent-run-as-user: "1001"
         vault.hashicorp.com/agent-inject-secret-application.yml: 'internal/data/mindspore/search'
         vault.hashicorp.com/agent-inject-template-application.yml: |  
@@ -99,3 +99,10 @@ spec:
           requests:
             cpu: 1000m
             memory: 2000Mi
+        volumeMounts:
+        - mountPath: /opt/sql
+          name: sql-config-volume
+      volumes:
+      - name: sql-config-volume
+        persistentVolumeClaim:
+          claimName: mindspore-search-es
