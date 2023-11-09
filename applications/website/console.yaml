@@ -54,6 +54,12 @@ spec:
     mysql_url:
       key: mysql_url
       path: secrets/data/mindspore/website-secrets
+    ACCESS_KEY_ID:
+      key: ACCESS_KEY_ID
+      path: secrets/data/mindspore/website-secrets
+    SECRET_ACCESS_KEY_ID:
+      key: SECRET_ACCESS_KEY_ID
+      path: secrets/data/mindspore/website-secrets
   name: website-secrets
 
 ---
@@ -99,6 +105,16 @@ spec:
           valueFrom:
             secretKeyRef:
               key: mysql_username
+              name: website-secrets
+        - name: ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: ACCESS_KEY_ID
+              name: website-secrets
+        - name: SECRET_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              key: SECRET_ACCESS_KEY_ID
               name: website-secrets
         resources:
           requests:
