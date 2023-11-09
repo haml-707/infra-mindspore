@@ -16,4 +16,4 @@ resources:
 - pvc.yaml
 images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/docs-search
-  newTag: v1.0.20231109063201
+  newTag: v1.0.20231109095025
