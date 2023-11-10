@@ -1,0 +1,7 @@
+resources:
+- namespace.yaml
+- xihe-server
+- xihe-website
+namespace: xihe-test-v2-website
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
