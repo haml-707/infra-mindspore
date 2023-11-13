@@ -4,7 +4,7 @@ images:
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/mindspore-website-api
   newTag: master-53264e
 - name: swr.cn-north-4.myhuaweicloud.com/opensourceway/mindspore/website-backend
-  newTag: old-version-451619
+  newTag: old-version-bc65d6
 namespace: website
 resources:
 - namespace.yaml
