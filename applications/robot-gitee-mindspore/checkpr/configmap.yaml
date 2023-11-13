@@ -7,3 +7,5 @@ data:
     config_items:
     - repos:
       - mindspore
+      excluded_repos:
+      - mindspore/mindspore
