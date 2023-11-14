@@ -8,3 +8,4 @@ resources:
 - xihe-statistics-ingress.yaml
 - xihe-statistics-service.yaml
 - xihe-statistics-deployment.yaml
+- secret.yaml

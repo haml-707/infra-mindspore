@@ -19,3 +19,25 @@ spec:
   - hosts:
     - xihe-statistics.mindspore.cn
     secretName: xihe-statistics-tls
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: xihe-statistics-osinfra-ingress
+  namespace: xihe-new
+spec:
+  rules:
+  - host: xihe-statistics.osinfra.cn
+    http:
+      paths:
+      - backend:
+          serviceName: xihe-statistics-service
+          servicePort: 80
+        path: /
+  tls:
+  - hosts:
+    - xihe-statistics.osinfra.cn
+    secretName: xihe-statistics-osinfra-tls

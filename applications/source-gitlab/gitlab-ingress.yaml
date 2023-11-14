@@ -38,3 +38,45 @@ spec:
               serviceName: gitlab-service
               servicePort: 80
             path: /
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: "15G"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "1800"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "1800"
+    nginx.ingress.kubernetes.io/configuration-snippet: |
+      location /api/graphql {
+        return 403;
+      }
+      location /.well-known/openid-configuration {
+        return 403;
+      }
+      location /oauth/discovery/keys {
+        return 403;
+      }
+      location /users/sign_in {
+        return 403;
+      }
+      location /users/sign_up {
+        return 403;
+      }
+  name: gitlab-osinfra-ingress
+  namespace: source
+spec:
+  tls:
+    - hosts:
+        - source-xihe.osinfra.cn
+      secretName: xihe-osinfra-tls
+  rules:
+    - host: source-xihe.osinfra.cn
+      http:
+        paths:
+          - backend:
+              serviceName: gitlab-service
+              servicePort: 80
+            path: /
