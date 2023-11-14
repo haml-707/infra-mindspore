@@ -26,7 +26,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: repo-tools-ingress
+  name: repo-tools-osinfra-ingress
   namespace: repo-thirdparty
 spec:
   tls:
