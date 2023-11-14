@@ -25,17 +25,16 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   annotations:
-    kubernetes.io/ingress.class: repo-nginx
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-  name: repo-download-ingress
+    kubernetes.io/ingress.class: nginx
+  name: repo-download-osinfra-ingress
   namespace: download
 spec:
   tls:
     - hosts:
-        - download.mindspore.cn
-      secretName: download-secrets
+        - download-mindspore.osinfra.cn
+      secretName: download-osinfra-tls
   rules:
-    - host: download.mindspore.cn
+    - host: download-mindspore.osinfra.cn
       http:
         paths:
           - backend:

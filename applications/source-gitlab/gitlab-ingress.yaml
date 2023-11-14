@@ -70,10 +70,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - source-xihe.osinfra.cn
+        - source-xihe-mindspore.osinfra.cn
       secretName: xihe-osinfra-tls
   rules:
-    - host: source-xihe.osinfra.cn
+    - host: source-xihe-mindspore.osinfra.cn
       http:
         paths:
           - backend:

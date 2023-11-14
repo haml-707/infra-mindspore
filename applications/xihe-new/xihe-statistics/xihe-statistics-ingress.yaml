@@ -30,7 +30,7 @@ metadata:
   namespace: xihe-new
 spec:
   rules:
-  - host: xihe-statistics.osinfra.cn
+  - host: xihe-statistics-mindspore.osinfra.cn
     http:
       paths:
       - backend:
@@ -39,5 +39,5 @@ spec:
         path: /
   tls:
   - hosts:
-    - xihe-statistics.osinfra.cn
+    - xihe-statistics-mindspore.osinfra.cn
     secretName: xihe-statistics-osinfra-tls
