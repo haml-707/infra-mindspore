@@ -11,3 +11,4 @@ data:
       - ascend/pytorch
       - ascend/AscendSpeed
       - ascend/ModelLink
+      - ascend/ads
